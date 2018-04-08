@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="myshop_flower_form" model="ir.ui.view">
+            <field name="name">Flower</field>
+            <field name="model">myshop.flower</field>
+            <field name="arch" type="xml">
+                <form string="Flower">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="color"/>
+                            <field name="description"/>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="myshop_flower_tree" model="ir.ui.view">
+            <field name="name">Flower</field>
+            <field name="model">myshop.flower</field>
+            <field name="arch" type="xml">
+                <tree string="Flower">
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <field name="color"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="myshop_flower_act" model="ir.actions.act_window">
+            <field name="name">Flower</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myshop.flower</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create new flower
+                </p><p>
+                    Start create your flower and prepare to sell them.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="myshop_root" name="My shop" sequence="0"/>
+        <menuitem id="myshop_flower" name="Flower" parent="myshop_root" action="myshop_flower_act" sequence="0"/>
+
+    </data>
+</odoo>
